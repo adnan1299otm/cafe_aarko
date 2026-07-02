@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { Toaster } from "sonner";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -37,6 +38,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1 flex flex-col">{children}</main>
           <Footer />
+          <ScrollToTop />
           <Toaster position="bottom-center" />
         </SmoothScroll>
       </body>

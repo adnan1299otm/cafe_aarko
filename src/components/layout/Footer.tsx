@@ -70,7 +70,15 @@ export function Footer() {
           © {new Date().getFullYear()} Cafe Aarko. All rights reserved. Identifies as women-owned.
         </p>
         <p className="text-[var(--color-text-muted)] text-xs">
-          Site by OptiFlow
+          Site by{" "}
+          <a
+            href="https://optiflow-beta.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--color-brand)] hover:text-[var(--color-brand-soft)] transition-colors underline-offset-2 hover:underline"
+          >
+            OptiFlow
+          </a>
         </p>
       </div>
     </footer>

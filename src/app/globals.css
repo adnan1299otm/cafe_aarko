@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #120E0C;
+  --color-surface: #1C1613;
+  --color-surface-raised: #262019;
+  --color-border: #3A2F27;
+  --color-brand: #E3A23C;
+  --color-brand-soft: #F0C97D;
+  --color-brand-50: #FBF3E4;
+  --color-brand-100: #F1E2C8;
+  --color-brand-200: #E6D0AC;
+  --color-brand-300: #DBBF91;
+  --color-brand-400: #D0AD75;
+  --color-brand-500: #C69A5A;
+  --color-brand-600: #AB8148;
+  --color-brand-700: #916836;
+  --color-brand-800: #764F24;
+  --color-brand-900: #5C3A12;
+  --color-accent-teal: #2E7C6D;
+  --color-text: #F5EFE6;
+  --color-text-muted: #B8AA98;
+  --color-success: #6FBF73;
+  --color-error: #E2604F;
+  --color-warning: #D9A441;
+
+  --font-display: var(--font-fraunces), serif;
+  --font-body: var(--font-plus-jakarta-sans), sans-serif;
+  --font-sans: var(--font-plus-jakarta-sans), sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* default shadcn variables */
+  --color-primary: var(--color-brand);
+  --color-primary-foreground: #120E0C;
+  --color-secondary: var(--color-surface);
+  --color-secondary-foreground: var(--color-text);
+  --color-muted: var(--color-surface);
+  --color-muted-foreground: var(--color-text-muted);
+  --color-popover: var(--color-surface-raised);
+  --color-popover-foreground: var(--color-text);
+  --color-card: var(--color-surface);
+  --color-card-foreground: var(--color-text);
+  --color-destructive: var(--color-error);
+  --color-destructive-foreground: #FFFFFF;
+  --color-input: var(--color-border);
+  --color-ring: var(--color-brand);
+
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-600);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) var(--color-background);
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(245, 239, 230, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(245, 239, 230, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  }
+
+  .layered-shadow {
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.04),
+      0 4px 12px rgba(0, 0, 0, 0.06),
+      0 12px 32px rgba(0, 0, 0, 0.08);
+  }
+}
